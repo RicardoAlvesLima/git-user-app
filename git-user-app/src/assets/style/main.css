@@ -1,0 +1,84 @@
+body {
+    background-color: #EEE;
+}
+
+button:focus {
+    outline-width: 0 !important;
+}
+
+/*Navbar*/
+.vs-navbar {
+    height: 4rem;
+}
+
+/*Sidebar*/
+.vs-sidebar {
+    padding-top: 15vh;
+}
+
+.vs-sidebar-content .vs-sidebar__logo {
+    padding: 0;
+}
+
+.vs-sidebar__item__text {
+    color: transparent;
+}
+
+.vs-sidebar__item__icon, .vs-sidebar__item__text-tooltip {
+    padding-left: 25px;
+}
+
+.vs-sidebar-content.reduce .vs-sidebar__item.hasIcon:after {
+    background: white;
+}
+
+.vs-sidebar__item__arrow {
+    margin-left: 15px;
+}
+
+.vs-icon-arrow:before, .vs-icon-arrow:after {
+    background: white;
+}
+
+/*Input*/
+.vs-input {
+    width: 100%;
+}
+
+.white .vs-input {
+    caret-color: white;
+    color: white;
+}
+
+/*Button*/
+.vs-button {
+    margin: 0;
+}
+
+.vs-button .vs-button__loading {
+    padding-left: 1em;
+    justify-content: left;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/*Card*/
+.vs-card {
+    --vs-shadow-opacity: 0;
+}
+
+.vs-card:hover {
+    --vs-shadow-opacity: .2;
+    box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, var(--vs-shadow-opacity)) !important;
+    -webkit-box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, var(--vs-shadow-opacity)) !important;
+}
+
+/*Notification*/
+.vs-notification {
+    border-radius: 5px;
+}
+
+.vs-notification.vs-notification--border {
+    border: 0;
+    border-left: 5px solid rgba(var(--vs-border), 1);
+    width: 300px;
+}
