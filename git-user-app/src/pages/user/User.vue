@@ -14,7 +14,7 @@
       <div v-for="user in users" :key="user.id">
         <vs-card class="pr-4 pb-4 w-64" type="1">
           <template #title>
-            <h3>{{ user.name }}, {{ user.age }}</h3>
+            <h3>{{ user.name.substring(0, 16) }}, {{ user.age }}</h3>
           </template>
           <template #img>
             <img :src="user.git.avatar_url" alt="">
@@ -43,12 +43,22 @@
           </template>
           <template #interactions>
             <div class="flex flex-row space-x-1">
-              <vs-button shadow icon @click="editUser(user)">
-                <icon size="16px" name='edit'/>
-              </vs-button>
-              <vs-button danger icon @click="deleteUser(user.id)">
-                <icon size="16px" white name='trash'/>
-              </vs-button>
+              <vs-tooltip dark>
+                <vs-button shadow icon @click="editUser(user)">
+                  <icon size="18px" name='edit'/>
+                </vs-button>
+                <template #tooltip>
+                  Edit
+                </template>
+              </vs-tooltip>
+              <vs-tooltip dark>
+                <vs-button danger icon @click="deleteUser(user.id)">
+                  <icon size="18px" white name='trash'/>
+                </vs-button>
+                <template #tooltip>
+                  Remove
+                </template>
+              </vs-tooltip>
             </div>
           </template>
         </vs-card>
