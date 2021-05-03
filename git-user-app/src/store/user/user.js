@@ -34,17 +34,22 @@ const mutations = {
     setUsers(state, data) {
         data.forEach((u) => {
             GitRepository.followers(u.git.login).then((result) => {
-                u.followers = result.data.length
+                u.followers = result.data.length === 100 ? '+100' : result.data.length
             })
         })
         data.forEach((u) => {
             GitRepository.following(u.git.login).then((result) => {
-                u.following = result.data.length
+                u.following = result.data.length === 100 ? '+100' : result.data.length
+            })
+        })
+        data.forEach((u) => {
+            GitRepository.repositories(u.git.login).then((result) => {
+                u.repositories = result.data.length === 100 ? '+100' : result.data.length
             })
         })
         setTimeout(() => {
             state.users = data
-        }, 200);
+        }, 500);
     },
 }
 

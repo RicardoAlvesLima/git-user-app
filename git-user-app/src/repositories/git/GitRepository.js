@@ -12,4 +12,7 @@ export default {
     following(gitUser) {
         return axios.get(`${resource}/users/${gitUser}/following?per_page=100`)
     },
+    repositories(gitUser) {
+        return axios.get(`${resource}/users/${gitUser}/repos?per_page=100`)
+    },
 }

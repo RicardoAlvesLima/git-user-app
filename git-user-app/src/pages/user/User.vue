@@ -32,6 +32,12 @@
                 {{ user.following }} Following
               </span>
             </vs-button>
+            <vs-button flat color="#fff" transparent>
+              <icon size="20px" type="logo" name='github'/>
+              <span class="text-black pl-1">
+                {{ user.repositories }} Repositories
+              </span>
+            </vs-button>
             <p>
             </p>
           </template>
